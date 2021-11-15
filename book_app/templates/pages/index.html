@@ -9,6 +9,11 @@
   </nav>
   <main id="body-main">
     <h1>{{ heading }}</h1>
+    
+    <hr />
+    <a href="{% url 'book_create' %}"><button>Add New Book</button></a>
+    <hr />
+
     <ul>
     {% for book in books %}
       <li><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></li>
@@ -16,7 +21,7 @@
     </ul>
   </main>
   <footer id="body-footer">
-
+  
   </footer>
 </body>
 </html>

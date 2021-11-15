@@ -7,15 +7,12 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>{{ action }} Book</h1>
+  <h1>Book: {{ book.title }}</h1>
   <form method="POST">
-    <table>
-      {% csrf_token %}
-      {{ form.as_table }}
-    </table>
-    <button type="submit">{{ action }} Book</button>
-    
+    {% csrf_token %}
+    <label>Are you sure you want to delete {{ book.title }}?</label>
+    <button type="submit">Delete Book</button>
   </form>
-  <a href="{% url 'book_list' %}"><button>Home Page</button></a>
+  <a href="{% url 'book_detail' book.id %}"><button>Cancel</button></a>
 </body>
 </html>

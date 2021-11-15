@@ -9,5 +9,9 @@
 <body>
   <h1>Title: {{ b.title }}</h1>
   <p>This book as {{ b.pages }} pages.</p>
+  <hr />
+  <a href="{% url 'book_update' b.id %}"><button>Update Book</button></a>
+  <br />
+  <a href="{% url 'book_delete' b.id %}"><button>Delete Book</button></a>
 </body>
 </html>
